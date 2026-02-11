@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - Amal Jyothi College of Engineering</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #1a3a52;
+            --primary-light: #2a5078;
+            --accent-blue: #0066cc;
+            --accent-light: #00a3ff;
+            --text-color: #1a1a1a;
+            --text-light: #666666;
+            --light-gray: #f5f7fa;
+            --glass-light: rgba(255, 255, 255, 0.1);
+            --glass-lighter: rgba(255, 255, 255, 0.15);
+            --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            --font-heading: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--text-color);
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 50%, #dfe8f0 100%);
+            background-attachment: fixed;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated background elements */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 102, 204, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 163, 255, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--primary-dark);
+            padding: 1rem 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        nav .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        nav .logo::before {
+            content: '';
+            display: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #ffffff;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Hero Section */
+        .courses-hero {
+            margin-top: 70px;
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .courses-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,102,204,0.03)" stroke-width="0.5"/></pattern></defs><rect width="1200" height="600" fill="url(%23grid)" /></svg>');
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 3;
+        }
+
+        .hero-content .badge {
+            display: inline-block;
+            background: rgba(0, 163, 255, 0.1);
+            border: 1px solid rgba(0, 163, 255, 0.3);
+            color: #0066cc;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            animation: slideUp 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        .courses-hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: black;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideUp 1s ease forwards;
+            opacity: 0;
+        }
+
+        .courses-hero p {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            animation: slideUp 1.2s ease forwards;
+            opacity: 0;
+        }
+
+        .search-container {
+            display: flex;
+            gap: 0.5rem;
+            max-width: 500px;
+            margin: 0 auto;
+            animation: slideUp 1.4s ease forwards;
+            opacity: 0;
+        }
+
+        .search-container input {
+            flex: 1;
+            padding: 0.9rem 1.5rem;
+            border: 1px solid rgba(0, 102, 204, 0.2);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-container input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.95);
+            border-color: #0066cc;
+            box-shadow: 0 0 20px rgba(0, 102, 204, 0.2);
+        }
+
+        .search-container button {
+            padding: 0.9rem 2rem;
+            background: linear-gradient(135deg, #0066cc, #00a3ff);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .search-container button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 102, 204, 0.3);
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+
+        /* Filter Section */
+        .filters-section {
+            padding: 3rem 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .filters-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .filter-btn {
+            padding: 0.7rem 1.5rem;
+            border: 2px solid rgba(0, 102, 204, 0.2);
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: var(--text-color);
+            font-size: 0.95rem;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: linear-gradient(135deg,#0066cc, #00a3ff);
+            color: white;
+            border-color: #0066cc;
+            box-shadow: 0 8px 20px rgba(0, 102, 204, 0.25);
+            transform: translateY(-2px);
+        }
+
+        /* Courses Grid */
+        .courses-grid {
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Glass Morphism Course Card */
+        .course-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            padding: 2rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 102, 204, 0.1);
+        }
+
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0, 163, 255, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .course-card:hover::before {
+            opacity: 1;
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            background: rgba(255, 255, 255, 0.85);
+            border-color: rgba(0, 102, 204, 0.3);
+            box-shadow: 0 20px 50px rgba(0, 102, 204, 0.2);
+        }
+
+        .course-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .course-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #0066cc, #00a3ff);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            box-shadow: 0 8px 20px rgba(0, 102, 204, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .course-card:hover .course-icon {
+            transform: rotate(10deg) scale(1.1);
+        }
+
+        .course-level {
+            background: rgba(0, 102, 204, 0.1);
+            color: #0066cc;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid rgba(0, 102, 204, 0.2);
+        }
+
+        .course-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--text-color);
+            position: relative;
+            z-index: 2;
+            font-family: var(--font-heading);
+        }
+
+        .course-description {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .course-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .meta-item i {
+            color: #0066cc;
+            font-size: 1rem;
+        }
+
+        .course-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0, 102, 204, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .course-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .stars {
+            color: #ffc107;
+            font-size: 0.9rem;
+        }
+
+        .rating-count {
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        .enroll-btn {
+            background: linear-gradient(135deg, #0066cc, #00a3ff);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .enroll-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.3s ease;
+        }
+
+        .enroll-btn:hover::before {
+            left: 100%;
+        }
+
+        .enroll-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 102, 204, 0.3);
+        }
+
+        /* Empty state */
+        .no-courses {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-light);
+        }
+
+        .no-courses i {
+            font-size: 4rem;
+            color: rgba(0, 102, 204, 0.2);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 2;
+            margin-top: 3rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.8);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #0066cc, #00a3ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(26, 58, 82, 0.95);
+            backdrop-filter: blur(10px);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 3rem 2rem 1rem;
+            margin-top: 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1.5rem;
+            }
+
+            .courses-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .courses-hero p {
+                font-size: 1.1rem;
+            }
+
+            .search-container {
+                flex-direction: column;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filters-wrapper {
+                padding: 0 1rem;
+            }
+
+            footer .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations for cards on load */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .course-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .course-card:nth-child(1) { animation-delay: 0.1s; }
+        .course-card:nth-child(2) { animation-delay: 0.2s; }
+        .course-card:nth-child(3) { animation-delay: 0.3s; }
+        .course-card:nth-child(4) { animation-delay: 0.4s; }
+        .course-card:nth-child(5) { animation-delay: 0.5s; }
+        .course-card:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Kinetic text animation */
+        @keyframes textReveal {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content .badge {
+            animation: textReveal 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+        }
+
+        .courses-hero h1 {
+            animation: textReveal 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+        }
+
+        .courses-hero p {
+            animation: textReveal 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
+        }
+
+        .search-container {
+            animation: textReveal 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s both;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+ 
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">• AJCE</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Academics</a></li>
+                <li><a href="courses.html">Admissions</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>  
+
+    <!-- Hero Section -->
+    <section class="courses-hero">
+        <div class="hero-content">
+            <div class="badge">
+                <i class="fas fa-spark"></i> Explore Our Program
+            </div>
+            <h1>Academic Excellence Awaits</h1>
+            <p>Discover world-class courses designed to shape future innovators and leaders. Choose from diverse engineering disciplines and specialized programs.</p>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search courses, departments...">
+                <button onclick="searchCourses()">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters-section">
+        <div class="filters-wrapper">
+            <button class="filter-btn active" onclick="filterCourses('all')">All Courses</button>
+            <button class="filter-btn" onclick="filterCourses('engineering')">Engineering</button>
+            <button class="filter-btn" onclick="filterCourses('management')">Management</button>
+            <button class="filter-btn" onclick="filterCourses('research')">Research</button>
+            <button class="filter-btn" onclick="filterCourses('certification')">Certification</button>
+        </div>
+    </section>
+
+    <!-- Courses Grid -->
+    <section class="courses-grid">
+        <div class="container">
+            <div class="grid" id="coursesGrid">
+                <!-- Courses will be dynamically inserted here -->
+            </div>
+            <div class="no-courses" id="noCourses" style="display: none;">
+                <i class="fas fa-inbox"></i>
+                <h3>No courses found</h3>
+                <p>Try adjusting your search or filter criteria</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Courses Available</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">Active Students</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Placement Rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">Expert Faculty</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-section">
+                <h4>About AJCE</h4>
+                <p>Amal Jyothi College of Engineering is a premier institution dedicated to academic excellence and innovation.</p>
+                <div style="margin-top: 1rem; display: flex; gap: 1rem;">
+                    <a href="#" style="display: inline-block; width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" style="display: inline-block; width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" style="display: inline-block; width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s;">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Admissions</a></li>
+                    <li><a href="#">Faculty</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Kanjirappally, Kottayam, Kerala</p>
+                <p><i class="fas fa-phone"></i> +91-XXXX XXXXXX</p>
+                <p><i class="fas fa-envelope"></i> info@ajce.in</p>
+            </div>
+            <div class="footer-section">
+                <h4>Newsletter</h4>
+                <p>Subscribe to get updates on new courses and events.</p>
+                <div style="margin-top: 1rem; display: flex;">
+                    <input type="email" placeholder="Your email" style="flex: 1; padding: 0.7rem; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); border-radius: 8px 0 0 8px; color: white;">
+                    <button style="padding: 0.7rem 1rem; background: #00a3ff; border: none; border-radius: 0 8px 8px 0; cursor: pointer; color: white; font-weight: 600;">Join</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Amal Jyothi College of Engineering. All rights reserved. | <a href="#" style="color: rgba(255,255,255,0.7);">Privacy Policy</a> | <a href="#" style="color: rgba(255,255,255,0.7);">Terms & Conditions</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Sample course data
+        const courses = [
+            {
+                id: 1,
+                title: "Computer Science Engineering",
+                description: "Master the fundamentals of computing, algorithms, and software development.",
+                category: "engineering",
+                duration: "4 Years",
+                students: "250+",
+                rating: 4.8,
+                icon: "fa-laptop-code"
+            },
+            {
+                id: 2,
+                title: "Mechanical Engineering",
+                description: "Design, develop, and optimize mechanical systems and machinery.",
+                category: "engineering",
+                duration: "4 Years",
+                students: "180+",
+                rating: 4.7,
+                icon: "fa-cogs"
+            },
+            {
+                id: 3,
+                title: "Electrical Engineering",
+                description: "Explore power systems, electronics, and electrical automation technologies.",
+                category: "engineering",
+                duration: "4 Years",
+                students: "200+",
+                rating: 4.6,
+                icon: "fa-bolt"
+            },
+            {
+                id: 4,
+                title: "Civil Engineering",
+                description: "Build the infrastructure for tomorrow with modern civil engineering practices.",
+                category: "engineering",
+                duration: "4 Years",
+                students: "160+",
+                rating: 4.5,
+                icon: "fa-building"
+            },
+            {
+                id: 5,
+                title: "Data Science & AI",
+                description: "Learn machine learning, AI, and big data analytics from industry experts.",
+                category: "research",
+                duration: "2 Years",
+                students: "120+",
+                rating: 4.9,
+                icon: "fa-brain"
+            },
+            {
+                id: 6,
+                title: "Business Administration",
+                description: "Develop leadership and management skills for global business environments.",
+                category: "management",
+                duration: "2 Years",
+                students: "90+",
+                rating: 4.7,
+                icon: "fa-briefcase"
+            },
+            {
+                id: 7,
+                title: "Cybersecurity",
+                description: "Protect digital assets and infrastructure from modern cyber threats.",
+                category: "certification",
+                duration: "1.5 Years",
+                students: "85+",
+                rating: 4.8,
+                icon: "fa-shield-alt"
+            },
+            {
+                id: 8,
+                title: "Cloud Computing",
+                description: "Master AWS, Azure, and Google Cloud platforms for scalable solutions.",
+                category: "certification",
+                duration: "1 Year",
+                students: "75+",
+                rating: 4.6,
+                icon: "fa-cloud"
+            },
+            {
+                id: 9,
+                title: "IoT & Embedded Systems",
+                description: "Design smart devices and connected systems with cutting-edge IoT technologies.",
+                category: "engineering",
+                duration: "2 Years",
+                students: "110+",
+                rating: 4.7,
+                icon: "fa-microchip"
+            }
+        ];
+
+        let currentFilter = 'all';
+
+        function renderCourses(filteredCourses = courses) {
+            const grid = document.getElementById('coursesGrid');
+            const noCourses = document.getElementById('noCourses');
+
+            if (filteredCourses.length === 0) {
+                grid.innerHTML = '';
+                noCourses.style.display = 'block';
+                return;
+            }
+
+            noCourses.style.display = 'none';
+            grid.innerHTML = filteredCourses.map(course => `
+                <div class="course-card">
+                    <div class="course-header">
+                        <div class="course-icon">
+                            <i class="fas ${course.icon}"></i>
+                        </div>
+                        <span class="course-level">${course.category.toUpperCase()}</span>
+                    </div>
+                    <h3 class="course-title">${course.title}</h3>
+                    <p class="course-description">${course.description}</p>
+                    <div class="course-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-clock"></i>
+                            <span>${course.duration}</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-users"></i>
+                            <span>${course.students}</span>
+                        </div>
+                    </div>
+                    <div class="course-footer">
+                        <div class="course-rating">
+                            <div class="stars">
+                                ${'★'.repeat(Math.floor(course.rating))}<span style="color: #ddd;">${'★'.repeat(5 - Math.floor(course.rating))}</span>
+                            </div>
+                            <span class="rating-count">${course.rating}</span>
+                        </div>
+                        <button class="enroll-btn" onclick="enrollCourse('${course.title}')">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterCourses(category) {
+            currentFilter = category;
+            
+            // Update active button
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Filter and render
+            const filtered = category === 'all' ? courses : courses.filter(c => c.category === category);
+            renderCourses(filtered);
+        }
+
+        function searchCourses() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = courses.filter(course => 
+                course.title.toLowerCase().includes(searchTerm) ||
+                course.description.toLowerCase().includes(searchTerm) ||
+                course.category.toLowerCase().includes(searchTerm)
+            );
+            renderCourses(filtered);
+        }
+
+        function enrollCourse(courseName) {
+            window.location.href = `enrollment-form.html?course=${encodeURIComponent(courseName)}`;
+        }
+
+        // Search on Enter key
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('searchInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    searchCourses();
+                }
+            });
+
+            // Initial render
+            renderCourses();
+
+            // Smooth scroll for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+
+        // Mouse move effect for cards
+        document.addEventListener('mousemove', (e) => {
+            const cards = document.querySelectorAll('.course-card');
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) * 0.05;
+                const rotateY = (centerX - x) * 0.05;
+            });
+        });
+    </script>
+</body>
+</html>

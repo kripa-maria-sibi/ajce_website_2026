@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Enrollment Form - Amal Jyothi College of Engineering</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #1a3a52;
+            --primary-light: #2a5078;
+            --accent-blue: #0066cc;
+            --accent-light: #00a3ff;
+            --text-color: #1a1a1a;
+            --text-light: #666666;
+            --light-gray: #f5f7fa;
+            --glass-light: rgba(255, 255, 255, 0.1);
+            --glass-lighter: rgba(255, 255, 255, 0.15);
+            --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            --font-heading: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--text-color);
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 50%, #dfe8f0 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 58, 82, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        nav .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            font-family: var(--font-heading);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        main {
+            flex: 1;
+            margin-top: 80px;
+            padding: 3rem 2rem;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .form-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+            font-family: var(--font-heading);
+        }
+
+        .form-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .form-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .course-info {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .course-info h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        button {
+            flex: 1;
+            padding: 0.875rem 1.5rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: var(--font-sans);
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-light) 100%);
+            color: white;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 102, 204, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .cancel-btn {
+            background: #e0e0e0;
+            color: var(--text-color);
+        }
+
+        .cancel-btn:hover {
+            background: #d0d0d0;
+        }
+
+        .required {
+            color: #e74c3c;
+        }
+
+        .success-message {
+            display: none;
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #27ae60;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(39, 174, 96, 0.3);
+            z-index: 2000;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            .form-card {
+                padding: 1.5rem;
+            }
+
+            .form-header h1 {
+                font-size: 2rem;
+            }
+
+            .form-actions {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">AJCE</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="form-header">
+                <h1>Enrollment Form</h1>
+                <p>Complete the form below to enroll in the course</p>
+            </div>
+
+            <div class="form-card">
+                <div class="course-info" id="courseInfo">
+                    <h2 id="courseName">Course Name</h2>
+                </div>
+
+                <form id="enrollmentForm">
+                    <div class="form-group">
+                        <label for="studentName">Full Name <span class="required">*</span></label>
+                        <input type="text" id="studentName" name="studentName" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="studentEmail">Email ID <span class="required">*</span></label>
+                        <input type="email" id="studentEmail" name="studentEmail" placeholder="Enter your email address" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="studentPhone">Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="studentPhone" name="studentPhone" placeholder="Enter your phone number" required>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">Enroll Now</button>
+                        <button type="button" class="cancel-btn" onclick="goBack()">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <div class="success-message" id="successMessage">
+        <i class="fas fa-check-circle"></i> Successfully enrolled in the course!
+    </div>
+
+    <script>
+        // Get course name from URL parameter
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const courseName = params.get('course');
+            
+            if (courseName) {
+                document.getElementById('courseName').textContent = decodeURIComponent(courseName);
+            }
+
+            // Handle form submission
+            document.getElementById('enrollmentForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('studentName').value.trim();
+                const email = document.getElementById('studentEmail').value.trim();
+                const phone = document.getElementById('studentPhone').value.trim();
+
+                // Basic validation
+                if (!name || !email || !phone) {
+                    alert('Please fill in all required fields');
+                    return;
+                }
+
+                // Validate email format
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    alert('Please enter a valid email address');
+                    return;
+                }
+
+                // Validate phone number (at least 10 digits)
+                const phoneRegex = /^[\d\s\-\+\(\)]+$/;
+                if (!phoneRegex.test(phone) || phone.replace(/\D/g, '').length < 10) {
+                    alert('Please enter a valid phone number');
+                    return;
+                }
+
+                // Here you would normally send the data to a server
+                console.log('Enrollment Data:', {
+                    courseName: document.getElementById('courseName').textContent,
+                    studentName: name,
+                    studentEmail: email,
+                    studentPhone: phone
+                });
+
+                // Show success message
+                const successMsg = document.getElementById('successMessage');
+                successMsg.style.display = 'block';
+
+                // Reset form
+                document.getElementById('enrollmentForm').reset();
+
+                // Redirect after 2 seconds
+                setTimeout(function() {
+                    window.location.href = 'courses.html';
+                }, 2000);
+            });
+        });
+
+        function goBack() {
+            window.location.href = 'courses.html';
+        }
+    </script>
+</body>
+</html>
