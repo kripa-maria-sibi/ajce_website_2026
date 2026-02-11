@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amal Jyothi College of Engineering</title>
+    <title>Contact Us | Amal Jyothi College of Engineering</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -104,47 +104,6 @@
             padding: 0 2rem;
         }
 
-        /* Hero Section */
-        .hero {
-            margin-top: 70px;
-            padding: 5rem 2rem;
-            background-color: rgb(231, 231, 231);
-            color: #ffffff;
-        }
-
-        .hero-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            letter-spacing: -1px;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-            color: black;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            font-weight: 400;
-            color: black;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
         .btn {
             padding: 0.75rem 2rem;
             text-decoration: none;
@@ -170,14 +129,38 @@
             border-color: #0052a3;
         }
 
-        .btn-secondary {
-            background-color: transparent;
-            color:black;
-            border-color: black;
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            padding: 4.5rem 2rem 3.5rem;
+            background-color: rgb(231, 231, 231);
+            color: #ffffff;
         }
 
-        .btn-secondary:hover {
-            background-color: rgb(213, 213, 213);
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+            color: black;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+            color: black;
         }
 
         /* Sections */
@@ -215,19 +198,7 @@
             line-height: 1.7;
         }
 
-        /* Sections Background */
-        #about {
-            background-color: var(--light-gray);
-        }
-
-        #academics {
-            background-color: #ffffff;
-        }
-
-        #admissions {
-            background-color: var(--light-gray);
-        }
-
+        /* Contact Section */
         #contact {
             background-color: var(--primary-dark);
             color: #ffffff;
@@ -241,132 +212,6 @@
             color: rgba(255, 255, 255, 0.85);
         }
 
-        /* Cards Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .card {
-            background: #ffffff;
-            padding: 2rem;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-
-        .card:hover {
-            border-color: var(--accent-blue);
-            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.1);
-            transform: translateY(-3px);
-        }
-
-        .card-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            width: 50px;
-            height: 50px;
-            background-color: var(--light-gray);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent-blue);
-        }
-
-        .card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--primary-dark);
-            font-weight: 700;
-        }
-
-        .card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        .card-link {
-            display: inline-block;
-            margin-top: 1rem;
-            color: var(--accent-blue);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-            font-size: 0.95rem;
-        }
-
-        .card-link:hover {
-            color: var(--primary-dark);
-        }
-
-        /* Highlights */
-        .highlights {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2.5rem;
-        }
-
-        .highlight {
-            text-align: center;
-            padding: 2rem;
-            border-radius: 8px;
-            background-color: #ffffff;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-
-        .highlight:hover {
-            border-color: var(--accent-blue);
-            transform: translateY(-3px);
-        }
-
-        .highlight h4 {
-            font-size: 2.2rem;
-            color: var(--accent-blue);
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-
-        .highlight p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-
-        /* Content Sections */
-        .about-content {
-            max-width: 750px;
-            margin: 0 auto;
-        }
-
-        .about-content p {
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-            line-height: 1.8;
-            color: var(--text-light);
-        }
-
-        .about-content ul {
-            margin-left: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .about-content ul li {
-            margin-bottom: 0.75rem;
-            color: var(--text-light);
-        }
-
-        .about-content strong {
-            color: var(--primary-dark);
-        }
-
-        /* Contact Section */
         .contact-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -459,6 +304,43 @@
             color: #ffffff;
         }
 
+        .leader-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .leader-card {
+            display: grid;
+            grid-template-columns: 64px 1fr;
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .leader-photo {
+            width: 64px;
+            height: 64px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .leader-meta h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+            color: #ffffff;
+        }
+
+        .leader-meta p {
+            margin: 0.1rem 0;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.9rem;
+        }
+
         .social-links {
             display: flex;
             gap: 0.75rem;
@@ -480,6 +362,55 @@
 
         .social-links a:hover {
             background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .card:hover {
+            border-color: var(--accent-blue);
+            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            width: 50px;
+            height: 50px;
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-blue);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+
+        .card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
         }
 
         /* Footer */
@@ -549,31 +480,22 @@
             }
 
             .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
+                font-size: 2.3rem;
             }
 
             section h2 {
                 font-size: 2rem;
             }
 
-            .grid {
-                grid-template-columns: 1fr;
-            }
-
             .contact-wrapper {
                 grid-template-columns: 1fr;
             }
 
-            .highlights {
-                grid-template-columns: repeat(2, 1fr);
+            .leader-grid {
+                grid-template-columns: 1fr;
             }
         }
 
-        /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
@@ -586,7 +508,7 @@
             <a href="index.html" class="logo">• AJCE</a>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="about.html" style="color: #ffffff;">About</a></li>
                 <li><a href="courses.html">Academics</a></li>
                 <li><a href="courses.html">Admissions</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -597,121 +519,8 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Amal Jyothi College of Engineering</h1>
-            <p>Excellence in engineering education since 1987. Shaping innovators and leaders for tomorrow's challenges.</p>
-            <div class="hero-buttons">
-                <a href="#admissions" class="btn btn-primary">Apply Now</a>
-                <a href="courses.html" class="btn btn-secondary">Explore Programs</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2>About AJCE</h2>
-            <div class="about-content">
-                <p></p>
-                <p>Amal Jyothi College of Engineering is a premier institution dedicated to providing world-class engineering education. Located in Kottayam, Kerala, AJCE has been a beacon of technical excellence for over three decades.</p>
-                <p>Our mission is to cultivate technologically competent engineers who are socially responsible and environmentally conscious. With a focus on innovation, research, and industry partnerships, we prepare students to tackle global challenges.</p>
-                
-                <div class="highlights">
-                    <div class="highlight">
-                        <h4>35+</h4>
-                        <p>Years of Excellence</p>
-                    </div>
-                    <div class="highlight">
-                        <h4>850+</h4>
-                        <p>Faculty & Staff</p>
-                    </div>
-                    <div class="highlight">
-                        <h4>8,000+</h4>
-                        <p>Alumni Network</p>
-                    </div>
-                    <div class="highlight">
-                        <h4>15+</h4>
-                        <p>Engineering Programs</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Academics Section -->
-    <section id="academics">
-        <div class="container">
-            <h2>Engineering Programs</h2>
-            <p class="section-intro">Comprehensive programs in traditional and emerging fields of engineering with state-of-the-art facilities and industry partnerships.</p>
-            <div class="grid">
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>Computer Science Engineering</h3>
-                    <p>Master modern computing technologies, software development, artificial intelligence, and cybersecurity with our state-of-the-art curriculum and industry partnerships.</p>
-                    <a href="#" class="card-link">Learn More</a>
-                </div>
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-wave-square"></i>
-                    </div>
-                    <h3>Electronics & Communication</h3>
-                    <p>Explore telecommunications, signal processing, and embedded systems. Build expertise in IoT, wireless communication, and modern electronics design.</p>
-                    <a href="#" class="card-link">Learn More</a>
-                </div>
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-cog"></i>
-                    </div>
-                    <h3>Mechanical Engineering</h3>
-                    <p>Study design, manufacturing, and mechanical systems. Engage with robotics, CAD, and industrial applications through hands-on projects.</p>
-                    <a href="#" class="card-link">Learn More</a>
-                </div>
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-th"></i>
-                    </div>
-                    <h3>Civil Engineering</h3>
-                    <p>Design and build infrastructure for tomorrow. Learn structural analysis, sustainable construction, and project management.</p>
-                    <a href="#" class="card-link">Learn More</a>
-                </div>
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3>Electrical Engineering</h3>
-                    <p>Power systems, electrical machines, and renewable energy. Master the foundations of modern electrical infrastructure and smart grids.</p>
-                    <a href="#" class="card-link">Learn More</a>
-                </div>
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3>Data Science & AI</h3>
-                    <p>Transform data into insights. Study machine learning, deep learning, and analytics with cutting-edge tools and real-world applications.</p>
-                    <a href="#" class="card-link">Learn More</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Admissions Section -->
-    <section id="admissions">
-        <div class="container">
-            <h2>Admissions</h2>
-            <div class="about-content">
-                <p></p>
-                <p><strong>Undergraduate Programs:</strong> AJCE offers 4-year BTech programs in multiple specializations. Admissions are based on merit and entrance examinations.</p>
-                <p><strong>Postgraduate Programs:</strong> Advanced MTech programs available for specialized fields including research-oriented studies.</p>
-                <p><strong>Entry Requirements:</strong></p>
-                <ul>
-                    <li>For BTech: 10+2 with Physics, Chemistry and Mathematics</li>
-                    <li>Merit-based and entrance exam-based admissions</li>
-                    <li>Application deadline: June-July for regular admissions</li>
-                    <li>Scholarships and financial aid available for deserving candidates</li>
-                </ul>
-                <p><strong>Contact the Admissions Office</strong> for detailed information about programs, fees, and application procedures.</p>
-            </div>
+            <h1>Contact Us</h1>
+            <p>Reach out for admissions, programs, campus visits, or partnerships. We are here to help.</p>
         </div>
     </section>
 
@@ -719,8 +528,8 @@
     <section id="contact">
         <div class="container">
             <h2>Get in Touch</h2>
-            <p class="section-intro">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
-            
+            <p class="section-intro">Send us a message and we will respond within two working days.</p>
+
             <div class="contact-wrapper">
                 <div class="contact-form">
                     <form onsubmit="handleSubmit(event)">
@@ -731,6 +540,10 @@
                         <div class="form-group">
                             <label for="email">Email Address</label>
                             <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+91 9XXXXXXXXX">
                         </div>
                         <div class="form-group">
                             <label for="subject">Subject</label>
@@ -755,9 +568,18 @@
                         </p>
                     </div>
                     <div class="contact-item">
+                        <h3>Office Hours</h3>
+                        <p>
+                            Monday to Friday: 9:00 AM – 5:00 PM<br>
+                            Saturday: 9:00 AM – 1:00 PM<br>
+                            Sunday & Holidays: Closed
+                        </p>
+                    </div>
+                    <div class="contact-item">
                         <h3>Phone</h3>
                         <p>
-                            <a href="tel:+919496666666">+91 949 666 6666</a>
+                            <a href="tel:+919496666666">+91 949 666 6666</a><br>
+                            <a href="tel:+914828259000">+91 4828 259 000</a>
                         </p>
                     </div>
                     <div class="contact-item">
@@ -766,6 +588,32 @@
                             <a href="mailto:info@ajce.in">info@ajce.in</a><br>
                             <a href="mailto:admissions@ajce.in">admissions@ajce.in</a>
                         </p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Leadership Contacts</h3>
+                        <div class="leader-grid">
+                            <div class="leader-card">
+                                <img class="leader-photo" src="https://ajce.in/home/images/Dr.-Lillykutty-Jacob.jpg" alt="Dr. Lillykutty Jacob">
+                                <div class="leader-meta">
+                                    <h4>Dr. Lillykutty Jacob</h4>
+                                    <p>Principal</p>
+                                    <p><a href="mailto:principal@amaljyothi.ac.in">principal@amaljyothi.ac.in</a></p>
+                                    <p>
+                                        <a href="tel:+919074132540">+91 90741 32540</a>,
+                                        <a href="tel:+919446732986">+91 94467 32986</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="leader-card">
+                                <img class="leader-photo" src="https://ajce.in/home/images/fr_mathew_paikatt.jpg" alt="Fr. Dr. Mathew Paikatt">
+                                <div class="leader-meta">
+                                    <h4>Fr. Dr. Mathew Paikatt</h4>
+                                    <p>Manager</p>
+                                    <p><a href="mailto:manager@amaljyothi.ac.in">manager@amaljyothi.ac.in</a></p>
+                                    <p><a href="tel:+914828251137">04828 251137</a></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="contact-item">
                         <h3>Follow Us</h3>
@@ -781,13 +629,78 @@
         </div>
     </section>
 
+    <!-- Quick Contacts -->
+    <section id="departments">
+        <div class="container">
+            <h2>Department Contacts</h2>
+            <p class="section-intro">Direct lines for quick assistance. Choose the most relevant office to reach the right team faster.</p>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Admissions Office</h3>
+                    <p>Email: admissions@ajce.in<br>Phone: +91 4828 259 210</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Placements</h3>
+                    <p>Email: placements@ajce.in<br>Phone: +91 4828 259 265</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Research & Innovation</h3>
+                    <p>Email: research@ajce.in<br>Phone: +91 4828 259 320</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hostel Contacts -->
+    <section id="hostels">
+        <div class="container">
+            <h2>Hostel Contacts</h2>
+            <p class="section-intro">Santhom (Gents) and Amala (Ladies) hostel contacts as listed by AJCE.</p>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h3>Santhom Gents Hostel</h3>
+                    <p>
+                        Fr. Jins Arackaparampil (Hostel Director): +91 9074557707, +91 9447850382<br>
+                        Fr. Siju Pullemplayil (IV Year In-charge): +91 9495810931<br>
+                        Fr. Jomy Kumbukattu (III Year In-charge): +91 8138909064<br>
+                        Fr. Bipin Kaniamnadackal (II Year In-charge): +91 9074557711<br>
+                        Fr. Pious Kochuparambil (I Year In-charge): +91 9074557708<br>
+                        Mr. Shibu Jacobb (Hostel Assistant): +91 9495705672
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h3>Amala Ladies Hostel</h3>
+                    <p>
+                        Sr. Sholly OSA (Animator): +91 9074557716, +91 8547907380<br>
+                        Sr. Josmi OSA (Animator): +91 9476512885
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
             <div>
                 <h4>About</h4>
                 <ul>
-                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="index.html#about">Our Story</a></li>
                     <li><a href="#">Leadership</a></li>
                     <li><a href="#">Careers</a></li>
                     <li><a href="#">News</a></li>
@@ -796,10 +709,10 @@
             <div>
                 <h4>Academics</h4>
                 <ul>
-                    <li><a href="#academics">Departments</a></li>
+                    <li><a href="index.html#academics">Departments</a></li>
                     <li><a href="#">Programs</a></li>
                     <li><a href="#">Research</a></li>
-                    <li><a href="#admissions">Admissions</a></li>
+                    <li><a href="index.html#admissions">Admissions</a></li>
                 </ul>
             </div>
             <div>
@@ -814,7 +727,7 @@
             <div>
                 <h4>Connect</h4>
                 <ul>
-                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                     <li><a href="#">Directions</a></li>
                     <li><a href="#">Events</a></li>
                     <li><a href="#">Social Media</a></li>
@@ -831,9 +744,9 @@
             event.preventDefault();
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
-            
+
             alert(`Thank you, ${name}! We've received your message. We'll get back to you at ${email} soon.`);
-            
+
             event.target.reset();
         }
     </script>
